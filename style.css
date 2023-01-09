@@ -4,12 +4,11 @@ button {
 #button-div {
   display: none;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-end;
   position: fixed;
   bottom: 10px;
   width:100%;
   z-index: 1;
-  border: 2px soild black;
 }
 .swal-icon img{
   width: 80px;
