@@ -25,6 +25,7 @@ AFRAME.registerComponent("createmarkers", {
         model.setAttribute("visible", false);
         marker.appendChild(model);
 
+        // description Container
         var mainPlane = document.createElement("a-plane");
         mainPlane.setAttribute("id", `main-plane-${toy.id}`);
         mainPlane.setAttribute("position", { x: 0, y: 0, z: 0 });
@@ -37,6 +38,7 @@ AFRAME.registerComponent("createmarkers", {
         mainPlane.setAttribute("visible", false);
         marker.appendChild(mainPlane);
 
+        //  toy title background plane
         var titlePlane = document.createElement("a-plane");
         titlePlane.setAttribute("id", `title-plane-${toy.id}`);
         titlePlane.setAttribute("position", { x: 0, y: 1.1, z: 0.08 });
@@ -46,6 +48,7 @@ AFRAME.registerComponent("createmarkers", {
         titlePlane.setAttribute("material", { color: "#f14668" });
         mainPlane.appendChild(titlePlane);
 
+        // Toy title
         var toyTitle = document.createElement("a-entity");
         toyTitle.setAttribute("id", `toy-title-${toy.id}`);
         toyTitle.setAttribute("position", { x: 1.3, y: 0, z: 0.1 });
@@ -74,6 +77,7 @@ AFRAME.registerComponent("createmarkers", {
 
         mainPlane.appendChild(price);
 
+        // description List
         var description = document.createElement("a-entity");
         description.setAttribute("id", `description-${toy.id}`);
         description.setAttribute("position", { x: 0.04, y: 0, z: 0.1 });

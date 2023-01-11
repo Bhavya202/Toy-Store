@@ -48,12 +48,16 @@
     <script src="./js/addMarkers.js"></script>
     <script src="./js/markerhandler.js"></script>
   </head>
+
   <body style="margin : 0px; overflow: hidden;">
     <a-scene
       id="main-scene"
       vr-mode-ui="enabled: false"
       embedded
-      arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
+      arjs="sourceType: webcam;
+      sourceWidth:1280; sourceHeight:960;
+      displayWidth: 1280; displayHeight: 960;
+      debugUIEnabled: false;"
       gesture-detector
       createbuttons
       createmarkers
@@ -61,8 +65,60 @@
       <!-- Camera -->
       <a-entity camera></a-entity>
     </a-scene>
-    
     <!-- Button Main Div -->
     <div id="button-div"></div>
+
+    <!-- Order Summary Boilerplate -->
+    <div class="container">
+      <div id="modal-div" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Order Summary</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                onclick="closeModal()"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="table-responsive">
+                <table class="table table-condensed">
+                  <thead>
+                    <tr>
+                      <td><strong>Item</strong></td>
+                      <td class="text-center"><strong>Price</strong></td>
+                      <td class="text-center"><strong>Quantity</strong></td>
+                      <td class="text-right"><strong>Total</strong></td>
+                    </tr>
+                  </thead>
+                  <tbody id="bill-table-body">
+                    <!-- foreach ($order->lineItems as $line)  -->
+
+                    <!-- Your Order Summary UI will comes here
+
+                 --></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button id="pay-button" type="button" class="btn btn-primary">
+                Pay Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function closeModal() {
+        document.getElementById("modal-div").style.display = "none";
+      }
+    </script>
   </body>
 </html>
